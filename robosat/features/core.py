@@ -46,13 +46,13 @@ def featurize(tile, polygon, shape):
       The closed polygon transformed into world coordinates.
     """
 
-    xmax, ymax = shape
+    ymax，xmax  = shape
 
     feature = []
 
     for point in polygon:
         px, py = point[0]
-        dx, dy = px / xmax, py / ymax
+        dx, dy = float(px) / xmax, float(py) / ymax
 
         feature.append(pixel_to_location(tile, dx, 1. - dy))
 
